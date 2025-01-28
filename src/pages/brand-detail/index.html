@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio About</title>
+</head>
+<body>
+<%= require('html-loader!../../layout/header.html').default %>
+<main>
+    <%= require('html-loader!../../components/nav.html').default %>
+    <section class="brand-welcome">
+        <div class="container">
+            <div class="brand-welcome__wrapper">
+                <div class="brand-welcome__logo">
+                    <img src="./img/brand-logo.png" alt="">
+                </div>
+                <div class="brand-welcome__info">
+                    <h1 class="brand-welcome__title">
+                        Щедрые пружаны
+                    </h1>
+                    <div class="brand-welcome__description">
+                        Откройте для себя широкий ассортимент продукции ООО «Чизмастер». Мы гордимся тем, что можем
+                        предложить вам широкий ассортимент сыров и восхитительного сливочного масла. Наши продукты
+                        изготовлены с использованием самых современных технологий из отборного молока.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="full-products">
+        <div class="container">
+            <div class="full-products__wrapper">
+                <h2 class="full-products__title">Продукция</h2>
+                <div class="full-products__list">
+                    <div class="slider-card">
+                        <a href="#" class="slider-card__photo">
+                            <img src="./img/slider-card1.png" alt="">
+                        </a>
+                        <div class="slider-card__info">
+                            <a class="slider-card__link" href="#">
+                                Сыр плавленый «Сливочный»
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-card">
+                        <a href="#" class="slider-card__photo">
+                            <img src="./img/slider-card1.png" alt="">
+                        </a>
+                        <div class="slider-card__info">
+                            <a class="slider-card__link" href="#">
+                                Сыр « VAN GOLD GRANO PRUGIANO»
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-card">
+                        <a href="#" class="slider-card__photo">
+                            <img src="./img/slider-card1.png" alt="">
+                        </a>
+                        <div class="slider-card__info">
+                            <a class="slider-card__link" href="#">
+                                Сыр плавленый «Сливочный»
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-card">
+                        <a href="#" class="slider-card__photo">
+                            <img src="./img/slider-card1.png" alt="">
+                        </a>
+                        <div class="slider-card__info">
+                            <a class="slider-card__link" href="#">
+                                Сыр плавленый «Сливочный»
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-card">
+                        <a href="#" class="slider-card__photo">
+                            <img src="./img/slider-card1.png" alt="">
+                        </a>
+                        <div class="slider-card__info">
+                            <a class="slider-card__link" href="#">
+                                Сыр плавленый «Сливочный»
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-card">
+                        <a href="#" class="slider-card__photo">
+                            <img src="./img/slider-card1.png" alt="">
+                        </a>
+                        <div class="slider-card__info">
+                            <a class="slider-card__link" href="#">
+                                Сыр плавленый «Сливочный»
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-card">
+                        <a href="#" class="slider-card__photo">
+                            <img src="./img/slider-card1.png" alt="">
+                        </a>
+                        <div class="slider-card__info">
+                            <a class="slider-card__link" href="#">
+                                Сыр плавленый «Сливочный»
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-card">
+                        <a href="#" class="slider-card__photo">
+                            <img src="./img/slider-card1.png" alt="">
+                        </a>
+                        <div class="slider-card__info">
+                            <a class="slider-card__link" href="#">
+                                Сыр плавленый «Сливочный»
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="full-products__more">
+                    <a href="#" class="btn">Загрузить еще</a>
+                </div>
+            </div>
+            <div class="full-products__down-btn">
+                <a href="#" class="btn btn--bold">перейти в каталог продукции</a>
+            </div>
+        </div>
+    </section>
+</main>
+<%= require('html-loader!../../layout/footer.html').default %>
+</body>
+</html>

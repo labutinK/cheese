@@ -1,0 +1,468 @@
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99;
+  background: #FFF;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 27px;
+  border-top: 10px solid $orange;
+  border-bottom: 10px solid $orange;
+
+  @media (max-width: $mobile) {
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+  }
+  @media (max-width: $mobileMedium) {
+    min-height: 19vw;
+  }
+
+  &__logo {
+    margin-right: 40px;
+    @media (max-width: 1520px) {
+      margin-right: 30px;
+      min-width: 29vw;
+    }
+    @media (max-width: $mobile) {
+      margin-right: auto;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    padding: 14px 0;
+    @media (max-width: $mobile) {
+      padding: 4px 0;
+    }
+  }
+
+  &__nav-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (max-width: $tablet) {
+      flex-wrap: nowrap;
+      flex-grow: 1;
+    }
+    @media (max-width: $tabletM) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__close-burger {
+    display: none;
+    @media (max-width: $tablet) {
+      display: inline-block;
+      position: absolute;
+      right: 35px;
+      top: 10px;
+      cursor: pointer;
+    }
+    @media (max-width: $mobileMini) {
+      right: 20px;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    margin-top: 40px;
+    @media (max-width: 1520px) {
+      font-size: 15px;
+      line-height: 16px;
+    }
+    @media (max-width: $tablet) {
+      display: none;
+      position: absolute;
+      top: calc(100% + 9px);
+      background: #227650;
+      width: 100vw;
+      left: calc(50% - 50vw);
+      color: #fff;
+      margin-top: 0;
+      padding: 30px 30px;
+      font-size: 23px;
+      line-height: 28px;
+      overflow-y: auto;
+      max-height: calc(100vh - var(--header-height));
+    }
+    @media (max-width: $mobile) {
+      top: calc(100% + 4px);
+    }
+    @media (max-width: $mobileMedium) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    @media (max-width: $mobileMini) {
+      padding: 15px 10px;
+    }
+
+    a {
+      transition: opacity .3s;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__submenu {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    top: calc(100% + 24px);
+    background-color: $green;
+    color: #fff;
+    padding: 15px 0;
+    left: 0;
+    transition: opacity .3s;
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+    @media (max-width: $mobileMini) {
+      padding: 8px 0;
+    }
+
+
+    &--active {
+      opacity: 1;
+      z-index: 1;
+      visibility: visible;
+      @media (max-width: $tablet) {
+        position: relative;
+      }
+    }
+
+    li {
+      display: block;
+
+      & + li {
+        margin-top: 6px;
+      }
+    }
+
+    a {
+      display: block;
+      white-space: nowrap;
+      padding: 5px 30px;
+      @media (max-width: $mobile) {
+
+      }
+    }
+  }
+
+  &__nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    @media (max-width: $tablet) {
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    & > a {
+      position: relative;
+      display: inline-block;
+      color: $green;
+      padding: 5px 10px;
+      @media (max-width: $tablet) {
+        color: #fff;
+      }
+    }
+  }
+
+  &__sub-icon {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    transition: transform .3s;
+    @media (max-width: $tablet) {
+      position: relative;
+      width: 40px;
+    }
+
+    &::after {
+      content: '';
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.6808 16.3297L7.04199 9.70285C6.39247 8.77496 7.05629 7.5 8.18892 7.5L16.8111 7.5C17.9437 7.5 18.6075 8.77496 17.958 9.70285L13.3192 16.3297C12.9211 16.8984 12.0789 16.8984 11.6808 16.3297Z' fill='%23227650'/%3e%3c/svg%3e ");
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      @media (max-width: $tablet) {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.1808 15.8297L6.54199 9.20285C5.89247 8.27496 6.55629 7 7.68892 7L16.3111 7C17.4437 7 18.1075 8.27496 17.458 9.20285L12.8192 15.8297C12.4211 16.3984 11.5789 16.3984 11.1808 15.8297Z' fill='white'/%3e%3c/svg%3e ");
+      }
+    }
+  }
+
+  &__search {
+    position: relative;
+    min-width: 428px;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top: 24px;
+    @media (max-width: $mobile) {
+      display: flex;
+      align-items: center;
+    }
+
+    form {
+      position: relative;
+      @media (max-width: $mobile) {
+        display: flex;
+        align-items: center;
+        margin-right: 60px;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      min-width: 320px;
+      margin-top: auto;
+      margin-right: 20px;
+    }
+    @media (max-width: $tabletM) {
+      min-width: 240px;
+    }
+    @media (max-width: $mobile) {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      background: #fff;
+      width: 100vw;
+      left: calc(50% - 50vw);
+      color: #fff;
+      margin-top: 0;
+      padding: 10px 20px;
+      font-size: 23px;
+      line-height: 28px;
+    }
+
+
+
+    input {
+      width: 100%;
+      padding: 7px 15px;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 300;
+      border: 1px solid $green;
+      border-radius: 15px;
+      @media (max-width: $mobile) {
+        border: none;
+        border-bottom: 1px solid $green;
+        border-radius: 0;
+      }
+    }
+  }
+
+  &__submit-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__with-submenu {
+    &--active {
+      .header__sub-icon {
+        transform: rotate(180deg);
+        @media (min-width: 1141px) {
+          &::after{
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.6808 16.3297L7.04199 9.70285C6.39247 8.77496 7.05629 7.5 8.18892 7.5L16.8111 7.5C17.9437 7.5 18.6075 8.77496 17.958 9.70285L13.3192 16.3297C12.9211 16.8984 12.0789 16.8984 11.6808 16.3297Z' fill='white'/%3e%3c/svg%3e ");
+          }
+        }
+      }
+
+      & > a {
+        @media (min-width: 1141px) {
+          background-color: $green;
+          color: #fff;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    & > a {
+      padding-right: 30px;
+      @media (max-width: $mobile) {
+        max-width: calc(100% - 40px);
+      }
+    }
+  }
+
+  &__burger-icon {
+    display: none;
+    @media (max-width: $tablet) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      transition: background-color .3s;
+      span {
+        width: 23px;
+        height: 2px;
+        background-color: $green;
+        border-radius: 2px;
+        transition: background-color .3s;
+      }
+      span + span {
+        margin-top: 8px;
+      }
+      &[data-open] {
+        background-color: $green;
+
+        span {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  &__search-icon {
+    display: none;
+    @media (max-width: $mobile) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      cursor: pointer;
+      &[data-open="true"] {
+        background-color: $green;
+
+        svg path,
+        svg circle {
+          stroke: #fff;
+        }
+      }
+    }
+  }
+
+  &__close-search {
+    display: none;
+    @media (max-width: $mobile) {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 35px;
+      cursor: pointer;
+    }
+  }
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+
+  &__pic {
+    min-width: 180px;
+    min-height: 175px;
+    @media (max-width: 1520px) {
+      min-width: 120px;
+      min-height: 115px;
+    }
+    @media (max-width: $tablet) {
+      width: 120px;
+    }
+    @media (max-width: $mobileMedium) {
+      width: 17vw;
+      min-width: unset;
+      flex-shrink: 0;
+      min-height: unset;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: 'Ostrovsky';
+    font-size: 39px;
+    font-weight: 700;
+    line-height: 37.79px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-bottom: 3px;
+    @media (max-width: 1520px) {
+      font-size: 28px;
+      line-height: 32px;
+    }
+    @media (max-width: $tabletM) {
+      font-size: 25px;
+    }
+    @media (max-width: $mobileMedium) {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    @media (max-width: $mobileMini) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    white-space: nowrap;
+    @media (max-width: 1520px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @media (max-width: $tabletM) {
+      font-size: 14px;
+    }
+    @media (max-width: $mobileMedium) {
+      font-size: 11px;
+      line-height: 16px;
+    }
+    @media (max-width: $mobileMini) {
+      font-size: 9px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    color: $gold;
+    margin-left: 19px;
+    text-transform: uppercase;
+    @media (max-width: 1520px) {
+      margin-left: 16px;
+    }
+    @media (max-width: $mobileMedium) {
+      margin-left: 10px;
+    }
+    @media (max-width: $mobileMini) {
+      margin-left: 4px;
+    }
+  }
+}

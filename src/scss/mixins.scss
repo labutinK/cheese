@@ -1,0 +1,30 @@
+@mixin hover-effect($opacity: .7, $transition-duration: .3s) {
+  transition: opacity $transition-duration;
+  &:hover {
+    opacity: $opacity;
+  }
+}
+
+@mixin card-hover() {
+  transition: border-color .3s;
+  .slider-card__info {
+    transition: background-color .3s;
+  }
+  &:hover {
+    border-color: $orange;
+
+    .slider-card__info {
+      background-color: $orange;
+    }
+  }
+}
+
+
+@keyframes slide-down {
+  0% {
+    top: -100%
+  }
+  100% {
+    top: 0
+  }
+}

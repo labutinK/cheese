@@ -1,0 +1,235 @@
+.form-input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &--search {
+
+  }
+
+
+  &__error-text {
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 4px);
+    left: 0;
+    font-size: 12px;
+    color: #FF5252;
+    line-height: 14px;
+  }
+
+  &:not(.form-input--error) {
+    input,
+    textarea {
+      &:hover,
+      &:active {
+        border: 1px solid #D8DBE2;
+      }
+
+      &[disabled]:hover {
+        border: 1px solid #C9C9C9;
+      }
+    }
+  }
+
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #1A1A1A;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    text-align: left;
+    border: 1px solid #D8DAE5;
+
+
+    &::placeholder {
+      color: #535151;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  &--m {
+    input,
+    textarea {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      padding: 9.5px 15px;
+    }
+  }
+
+  &:not(.form-input--error)[data-focused] {
+    &::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: -2px;
+      bottom: -2px;
+      left: -2px;
+      border: 1px solid #D8DBE2;
+      border-radius: 10px;
+    }
+
+    input,
+    textarea {
+      border: 1px solid #C9C9C9;
+    }
+  }
+
+  label {
+    display: inline-block;
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.5px;
+    text-align: left;
+
+    span{
+      color:$orange;
+    }
+  }
+
+  input[type='radio'] {
+    display: none;
+
+    & + label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: 35px;
+      cursor: pointer;
+
+      @media (max-width: $mobile) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border: 1px solid #101010;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+    }
+
+    &:checked + label {
+      &::before {
+        background-color: #1EB2E8;
+        border-color: #1EB2E8;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        width: 10px;
+        transform: translateY(-50%);
+        height: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  input[type='checkbox'] {
+    display: none;
+
+    & + label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: 35px;
+      cursor: pointer;
+      color: #8F8F8F;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 14.52px;
+      text-align: left;
+
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #274D74;
+        border-radius: 3px;
+        margin-right: 15px;
+      }
+    }
+
+    &:checked + label {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 9px;
+        display: inline-block;
+        top: 5px;
+        left: 4px;
+        background-position: center;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width=%2711%27 height=%279%27 viewBox=%270 0 11 9%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M10.4065 0.261455C10.1866 0.0735871 9.90101 -0.0192547 9.61262 0.00333493C9.32423 0.0259246 9.05661 0.162097 8.86857 0.381924L4.1717 5.87497L1.6449 3.7656C1.54487 3.67955 1.42873 3.61424 1.30324 3.57347C1.17775 3.53271 1.0454 3.51729 0.913899 3.52812C0.782395 3.53895 0.654356 3.57581 0.537225 3.63657C0.420093 3.69732 0.316206 3.78074 0.231601 3.882C0.146997 3.98325 0.0833629 4.10032 0.044399 4.22638C0.00543504 4.35245 -0.00808177 4.485 0.00463411 4.61633C0.01735 4.74767 0.056045 4.87517 0.11847 4.99141C0.180895 5.10766 0.265804 5.21034 0.368262 5.29349L3.75357 8.12005C3.85796 8.20708 3.97915 8.27168 4.1096 8.30983C4.24004 8.34797 4.37695 8.35885 4.51178 8.34177C4.65477 8.33072 4.79418 8.29158 4.92203 8.22659C5.04988 8.1616 5.16366 8.07203 5.25686 7.96302L10.5263 1.79895C10.714 1.57888 10.8067 1.29334 10.784 1.00501C10.7614 0.716672 10.6253 0.449091 10.4056 0.260986%27 fill=%27%23274D74%27/%3e%3c/svg%3e");
+      }
+    }
+  }
+
+  &--error {
+    input[type='checkbox'] {
+      & + label {
+        color: #FF5252;
+
+        &::before {
+          border-color: #FF5252;
+        }
+      }
+    }
+  }
+
+  &__search-submit {
+    position: absolute;
+    display: flex;
+    padding: 10px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &--error {
+    input,
+    textarea {
+      border-color: #FF5252;
+    }
+  }
+
+  &--success {
+    .form-input__error-text {
+      display: none;
+    }
+  }
+
+  label {
+    margin-bottom: 8px;
+  }
+}
+
