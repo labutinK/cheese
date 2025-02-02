@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio About</title>
+</head>
+<body>
+<%= require('html-loader!../../layout/header.html').default %>
+<main>
+    <%= require('html-loader!../../components/nav.html').default %>
+    <section class="detail-element detail-element--news">
+        <div class="container">
+            <div class="detail-element__wrapper">
+                <div class="detail-element__photos">
+                    <div class="detail-element__main-slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./img/newsdetail1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/newsdetail2.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/newsdetail3.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-element__side-slider">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./img/newsdetail1.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/newsdetail2.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/newsdetail3.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-element__info">
+                    <h1 class="detail-element__title">Наша компания приняла участие в выставке Продэкспо 2025</h1>
+                    <div class="detail-element__text">
+                        <p>Откройте для себя широкий ассортимент продукции ООО «Чизмастер». Мы гордимся тем, что можем
+                            предложить вам широкий ассортимент сыров и восхитительного сливочного масла. Наши продукты
+                            изготовлены с использованием самых современных технологий из отборного молока.</p>
+
+                        <p>Откройте для себя широкий ассортимент продукции ООО «Чизмастер». Мы гордимся тем, что можем
+                            предложить вам широкий ассортимент сыров и восхитительного сливочного масла. Наши продукты
+                            изготовлены с использованием самых современных технологий из отборного молока.</p>
+
+                        <p>Откройте для себя широкий ассортимент продукции ООО «Чизмастер». Мы гордимся тем, что можем
+                            предложить вам широкий ассортимент сыров и восхитительного сливочного масла. Наши продукты
+                            изготовлены с использованием самых современных технологий из отборного молока.</p>
+
+                        <p>Откройте для себя широкий ассортимент продукции ООО «Чизмастер». Мы гордимся тем, что можем
+                            предложить вам широкий ассортимент сыров и восхитительного сливочного масла. Наши продукты
+                            изготовлены с использованием самых современных технологий из отборного молока.</p>
+
+                        <p>Откройте для себя широкий ассортимент продукции ООО «Чизмастер». Мы гордимся тем, что можем
+                            предложить вам широкий ассортимент сыров и восхитительного сливочного масла. Наши продукты
+                            изготовлены с использованием самых современных технологий из отборного молока.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="news-slider">
+        <svg width="0" height="0">
+            <defs>
+                <clipPath id="curve" clipPathUnits="objectBoundingBox">
+                    <path d="M0 0 H1 V0.85 C0.95 0.85, 0.75 0.95, 0.5 0.95 C0.25 0.95, 0.05 0.85, 0 0.85 V0"/>
+                </clipPath>
+            </defs>
+        </svg>
+        <div class="container">
+            <div class="news-slider__wrapper">
+                <h2 class="news-slider__title">Новости компании</h2>
+                <div class="news-slider__content">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="news-slider-item">
+                                    <a href="./news-detail.html" class="news-slider-item__photo">
+                                        <img src="./img/newsitem1.jpg" alt="">
+                                    </a>
+                                    <a href="./news-detail.html" class="news-slider-item__title">
+                                        Наша компания приняла участие в выставке Продэкспо 2025
+                                    </a>
+                                    <div class="news-slider-item__description">
+                                        здесь должен быть текст… здесь должен быть текст.. здесь должен быть текст…
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="news-slider-item">
+                                    <a href="./news-detail.html" class="news-slider-item__photo">
+                                        <img src="./img/newsitem2.jpg" alt="">
+                                    </a>
+                                    <a href="./news-detail.html" class="news-slider-item__title">
+                                        Встречайте нас на Продэкспо 2025
+                                    </a>
+                                    <div class="news-slider-item__description">
+                                        здесь должен быть текст… здесь должен быть текст.. здесь должен быть текст…
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="news-slider-item">
+                                    <a href="./news-detail.html" class="news-slider-item__photo">
+                                        <img src="./img/newsitem1.jpg" alt="">
+                                    </a>
+                                    <a href="./news-detail.html" class="news-slider-item__title">
+                                        Название новости </a>
+                                    <div class="news-slider-item__description">
+                                        здесь должен быть текст… здесь должен быть текст.. здесь должен быть текст…
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="news-slider-item">
+                                    <a href="./news-detail.html" class="news-slider-item__photo">
+                                        <img src="./img/newsitem2.jpg" alt="">
+                                    </a>
+                                    <a href="./news-detail.html" class="news-slider-item__title">
+                                        Название новости
+                                    </a>
+                                    <div class="news-slider-item__description">
+                                        здесь должен быть текст… здесь должен быть текст.. здесь должен быть текст…
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-prev slider-prev--green"></div>
+                    <div class="slider-next slider-next--green"></div>
+                    <div class="news-slider__pagination cheese-pagination cheese-pagination--transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<%= require('html-loader!../../layout/footer.html').default %>
+</body>
+</html>

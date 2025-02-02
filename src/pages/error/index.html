@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio About</title>
+</head>
+<body>
+<%= require('html-loader!../../layout/header.html').default %>
+<main>
+    <section class="error">
+        <div class="container">
+            <div class="error__wrapper">
+                <div class="error__picture">
+                    <img src="./img/farmer.png" alt="">
+                </div>
+                <div class="error__info">
+                    <h1 class="error__title">404</h1>
+                    <div class="error__subtitle">Ошибка</div>
+                    <div class="error__text-one">Такой страницы у нас нет</div>
+                    <div class="error__text-two">Зато есть другие :)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<%= require('html-loader!../../layout/footer.html').default %>
+</body>
+</html>

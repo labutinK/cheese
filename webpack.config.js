@@ -93,6 +93,51 @@ module.exports = {
             inject: true,
             filename: 'catalog.html',
         }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/catalog-element/index.html',
+            inject: true,
+            filename: 'catalog-element.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/catalog-element-second/index.html',
+            inject: true,
+            filename: 'catalog-element-second.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/error/index.html',
+            inject: true,
+            filename: 'error.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/news/index.html',
+            inject: true,
+            filename: 'news.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/news-detail/index.html',
+            inject: true,
+            filename: 'news-detail.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/feedback/index.html',
+            inject: true,
+            filename: 'feedback.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/contacts/index.html',
+            inject: true,
+            filename: 'contacts.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/search-catalog/index.html',
+            inject: true,
+            filename: 'search-catalog.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/search-news/index.html',
+            inject: true,
+            filename: 'search-news.html',
+        }),
         new MiniCssExtractPlugin({
             filename: 'css/styles.css',
         }),

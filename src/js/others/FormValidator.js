@@ -387,10 +387,14 @@ class FormValidator {
         const inputmaskFields = this.form.querySelectorAll('.form-input--inputmask input');
         if (inputmaskFields.length) {
             inputmaskFields.forEach(el => {
-                const inputmaskVal = this.getDataParam(el, 'inputMask');
-                if (inputmaskVal) {
-                    Inputmask(inputmaskVal).mask(el);
+                var param = this.getDataParam(el, 'inputMask')
+                if (param.startsWith("alias")) {
+                    const inputmaskVal = param.replace(/^(alias).*/, "$1");
+                    Inputmask({ alias: "email"}).mask(el);
+                }else if(param){
+                    Inputmask(param).mask(el);
                 }
+
             });
         }
     }

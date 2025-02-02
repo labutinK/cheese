@@ -1,4 +1,6 @@
 import {CheeseHeader} from "./js/header";
+import {slideUp, slideDown} from './js/utils';
+import Inputmask from "inputmask";
 
 require('./scss/styles.scss');
 import Swiper from 'swiper';
@@ -219,14 +221,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
 
 
-        const slides = document.querySelectorAll('.swiper-slide');
+        const slides = document.querySelectorAll('.slider-cards .swiper-slide');
 
         slides.forEach((slide) => {
             slide.addEventListener('click', (e) => {
                 const currentSlide = e.target.classList.contains('swiper-slide') ? e.target : e.target.closest('.swiper-slide');  // Слайд, по которому кликнули
                 const nextSlide = currentSlide.nextElementSibling;  // Следующий слайд
 
-                if (currentSlide.classList.contains('swiper-slide-active')) {
+                if (!currentSlide.classList.contains('swiper-slide-active')) {
                     // Логика в зависимости от классов
                     if (currentSlide.classList.contains('swiper-slide-prev')) {
                         cardsSlider.slidePrev();
@@ -256,5 +258,109 @@ document.addEventListener("DOMContentLoaded", (event) => {
 // Запуск при загрузке и при изменении размеров окна
         updateHeaderHeight();
         window.addEventListener('resize', updateHeaderHeight);
+
+
+        const filterBoxes = document.querySelectorAll('.filter-box');
+        if (filterBoxes.length) {
+            filterBoxes.forEach(filterBox => {
+                const title = filterBox.querySelector('.filter-box__title');
+                const list = filterBox.querySelector('.filter-box__list');
+                title.addEventListener('click', () => {
+                    if (!filterBox.hasAttribute('data-in-process')) {
+                        filterBox.setAttribute('data-in-process', true);
+                        if (filterBox.classList.contains('filter-box--open')) {
+                            filterBox.classList.remove('filter-box--open');
+                            slideUp(list, 300, () => {
+                                filterBox.removeAttribute('data-in-process');
+                            })
+                        } else {
+                            filterBox.classList.add('filter-box--open');
+                            slideDown(list, 300, () => {
+                                filterBox.removeAttribute('data-in-process');
+                            })
+                        }
+                    }
+                })
+            })
+        }
+
+        const form = document.getElementById(`feedback-form`);
+        if (form) {
+            const validator = new FormValidator(form);
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                const fd = new FormData(form);
+
+                validator.submit(() => {
+                    const item = document.querySelector('#formCallbackSuccess').content.cloneNode(true);
+                    form.closest('[data-replace-wrapper]')?.replaceWith(item);
+                    const headerHeight = header.offsetHeight;
+                    const elementPosition = form.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                        top: elementPosition - headerHeight,
+                        behavior: "smooth"
+                    });
+                }, () => {
+                    const element = document.querySelector(".form-input--error");
+                    const headerHeight = header.offsetHeight;
+
+// Вычисляем координаты элемента
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+
+// Прокрутка с учётом отступа
+                    window.scrollTo({
+                        top: elementPosition - headerHeight,
+                        behavior: "smooth"
+                    });
+                });
+
+
+            });
+        }
+
+        // Инициализация нижнего слайдера (миниатюры)
+        var sideSlider = new Swiper('.detail-element--catalog .detail-element__side-slider .swiper', {
+            slidesPerView: 2,          // Показывать по 2 слайда
+            watchSlidesProgress: true,
+            spaceBetween: 30,          // Отступ между слайдами
+            slideToClickedSlide: true,  // Переключение главного слайдера при клике
+            navigation: {
+                nextEl: '.detail-element__side-slider .slider-next',
+                prevEl: '.detail-element__side-slider .slider-prev',
+            },
+        });
+
+// Инициализация верхнего слайдера (основной)
+        var mainSlider = new Swiper('.detail-element--catalog .detail-element__main-slider', {
+            slidesPerView: 1,   // Один слайд за раз
+            spaceBetween: 0,    // Без отступов
+            thumbs: {
+                swiper: sideSlider // Привязка к нижнему слайдеру
+            }
+        });
+
+        var sideSliderNews = new Swiper('.detail-element--news .detail-element__side-slider .swiper', {
+            slidesPerView: 3,          // Показывать по 2 слайда
+            watchSlidesProgress: true,
+            loop: true,
+            spaceBetween: 30,          // Отступ между слайдами
+            slideToClickedSlide: true,  // Переключение главного слайдера при клике
+            navigation: {
+                nextEl: '.detail-element__side-slider .slider-next',
+                prevEl: '.detail-element__side-slider .slider-prev',
+            },
+        });
+
+// Инициализация верхнего слайдера (основной)
+        var mainSliderNews = new Swiper('.detail-element--news .detail-element__main-slider', {
+            slidesPerView: 1,   // Один слайд за раз
+            spaceBetween: 0,    // Без отступов
+            loop: true,
+            thumbs: {
+                swiper: sideSliderNews // Привязка к нижнему слайдеру
+            }
+        });
+
     }
 );

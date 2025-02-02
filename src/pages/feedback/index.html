@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio About</title>
+</head>
+<body>
+<%= require('html-loader!../../layout/header.html').default %>
+<main>
+    <section class="feedback">
+        <div class="container">
+            <div class="feedback__wrapper">
+                <h1 class="feedback__title">Напишите нам</h1>
+                <div class="feedback__form" data-replace-wrapper>
+                    <form id="feedback-form" class="form" action="#" method="get">
+                        <div class="form__full">
+                            <div class="form-input form-input--required"
+                                 data-format="Поле обязательно"
+                                 data-range="Поле обязательно"
+                            >
+                                <label for="namefield">Ваше имя</label>
+                                <input placeholder="______________" type="text" id="namefield" name="client_name">
+                            </div>
+                        </div>
+                        <div class="form__full">
+                            <div class="form-input ">
+                                <label for="commentfield">Ваше cообщение</label>
+                                <textarea placeholder="______________" id="commentfield" name="client_comment"
+                                          rows="6"></textarea>
+                            </div>
+                        </div>
+                        <div class="form__double">
+                            <div class="form-input form-input--inputmask form__double-title"
+                                 data-inputmask="alias_email"
+                                 data-format="Введите корректный email">
+                                <label>Ваши контакты</label>
+                                <input placeholder="E-mail ______________" type="text" name="client_mail">
+                            </div>
+                            <div class="form-input form-input--inputmask" data-inputmask="+7(999)999-99-99"
+                            data-format="Введите корректный номер телефона">
+                                <input placeholder="+7(___)___-__-__" type="text" name="client_phone">
+                            </div>
+                        </div>
+                        <div class="form__submit">
+                            <button class="btn">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <template id="formCallbackSuccess">
+        <div class="result-modal">
+            <div class="result-modal__title">Спасибо за сообщение!</div>
+            <div class="result-modal_subtitle">Мы свяжемся с вами в ближайшее время</div>
+        </div>
+    </template>
+</main>
+<%= require('html-loader!../../layout/footer.html').default %>
+</body>
+</html>

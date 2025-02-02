@@ -171,6 +171,12 @@
       flex-wrap: wrap;
     }
 
+    &--active{
+      & > a{
+        font-weight:700;
+      }
+    }
+
     & > a {
       position: relative;
       display: inline-block;

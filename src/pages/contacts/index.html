@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio About</title>
+</head>
+<body>
+<%= require('html-loader!../../layout/header.html').default %>
+<main>
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts__wrapper">
+                <h1 class="contacts__title">Наши контакты</h1>
+                <div class="contacts__content">
+                    <div class="contacts__list">
+                        <ul>
+                            <li>
+                                <span class="contact-item">
+                                    <span class="contact-item__icon">
+                                        <svg width="21" height="25" viewBox="0 0 21 25" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M10.9006 23.9734C12.7864 23.0224 20.7096 18.5782 20.7096 11.0416C20.7096 5.40368 16.1392 0.833252 10.5013 0.833252C4.8634 0.833252 0.292969 5.40368 0.292969 11.0416C0.292969 18.5782 8.21626 23.0224 10.102 23.9734C10.3564 24.1017 10.6462 24.1017 10.9006 23.9734ZM10.501 15.4165C12.9172 15.4165 14.876 13.4577 14.876 11.0415C14.876 8.62526 12.9172 6.6665 10.501 6.6665C8.08473 6.6665 6.12598 8.62526 6.12598 11.0415C6.12598 13.4577 8.08473 15.4165 10.501 15.4165Z"
+                                                  fill="#227650"/>
+                                        </svg>
+                                    </span>
+                                    <span class="contact-item__text">
+                                        Адрес: г. Москва
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="tel:+0000000000" class="contact-item">
+                                    <span class="contact-item__icon">
+                                       <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.67962 2.37301L4.34552 0.707107C4.73605 0.316582 5.36921 0.316582 5.75974 0.707106L9.18763 4.135C9.57815 4.52552 9.57816 5.15869 9.18763 5.54921L6.869 7.86784C6.5072 8.22964 6.4175 8.78237 6.64633 9.24003C7.96914 11.8856 10.1144 14.0309 12.76 15.3537C13.2176 15.5825 13.7704 15.4928 14.1322 15.131L16.4508 12.8124C16.8413 12.4218 17.4745 12.4218 17.865 12.8124L21.2929 16.2403C21.6834 16.6308 21.6834 17.264 21.2929 17.6545L19.627 19.3204C17.5156 21.4317 14.1731 21.6693 11.7843 19.8777L8.89173 17.7083C7.1482 16.4006 5.59938 14.8518 4.29173 13.1083L2.12226 10.2156C0.330722 7.82693 0.568272 4.48436 2.67962 2.37301Z"
+                                                  fill="#227650"/>
+                                        </svg>
+                                    </span>
+                                    <span class="contact-item__text">
+                                        +0 (000) 00-00-00
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="contact-item">
+                                    <span class="contact-item__icon">
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M3.75239 11.1453C3.75 11.4875 3.75 11.855 3.75 12.25V17.75C3.75 20.5784 3.75 21.9926 4.62868 22.8713C5.50736 23.75 6.92157 23.75 9.75 23.75H20.25C23.0784 23.75 24.4926 23.75 25.3713 22.8713C26.25 21.9926 26.25 20.5784 26.25 17.75V12.25C26.25 11.855 26.25 11.4875 26.2476 11.1453L15.9713 16.8544C15.3672 17.1899 14.6328 17.1899 14.0287 16.8544L3.75239 11.1453ZM3.85368 9.00513C3.98403 9.01865 4.11384 9.05818 4.23564 9.12584L15 15.106L25.7644 9.12584C25.8862 9.05818 26.016 9.01866 26.1463 9.00514C26.0386 8.16313 25.819 7.57639 25.3713 7.12868C24.4926 6.25 23.0784 6.25 20.25 6.25H9.75C6.92157 6.25 5.50736 6.25 4.62868 7.12868C4.18097 7.57639 3.96138 8.16313 3.85368 9.00513Z"
+                                                  fill="#227650"/>
+                                        </svg>
+                                    </span>
+                                    <span class="contact-item__text">
+                                        Email: abcd@mail.ru
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="/feedback.html" class="btn">Написать нам</a>
+                    </div>
+                    <div class="contacts__text">
+                        <p>Откройте для себя широкий ассортимент продукции ООО «Чизмастер». Мы гордимся тем, что можем
+                            предложить вам широкий ассортимент сыров и восхитительного сливочного масла. Наши продукты
+                            изготовлены с использованием самых современных технологий из отборного молока.</p>
+                        <p>Откройте для себя широкий ассортимент продукции ООО «Чизмастер». Мы гордимся тем, что можем
+                            предложить вам широкий ассортимент сыров и восхитительного сливочного масла. Наши продукты
+                            изготовлены с использованием самых современных технологий из отборного молока.</p>
+                    </div>
+                </div>
+                <div class="contacts__map">
+                    <div style="position:relative;overflow:hidden;"><a
+                            href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
+                            style="color:#eee;font-size:12px;position:absolute;top:0px;">Moscow</a><a
+                            href="https://yandex.ru/maps/geo/moskva/53000094/?ll=37.584241%2C55.728628&utm_medium=mapframe&utm_source=maps&z=11.19"
+                            style="color:#eee;font-size:12px;position:absolute;top:14px;">Moscow — Yandex Maps</a>
+                        <iframe src="https://yandex.ru/map-widget/v1/?ll=37.584241%2C55.728628&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDA5NBIa0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAiCg2GeBZCFQEGX0I%2C&z=11.19"
+                                width="100%" height="994" frameborder="1" allowfullscreen="true"
+                                style="position:relative;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<%= require('html-loader!../../layout/footer.html').default %>
+</body>
+</html>
