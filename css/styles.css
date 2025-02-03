@@ -1500,11 +1500,6 @@ h2, .h2 {
     @media (max-width: 400px) {
       .header__nav {
         padding: 15px 10px; } }
-    .header__nav a {
-      -webkit-transition: opacity .3s;
-      transition: opacity .3s; }
-      .header__nav a:hover {
-        opacity: .8; }
   .header__nav-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1567,6 +1562,13 @@ h2, .h2 {
                 align-items: center;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; } }
+    .header__nav-item > a:hover {
+      -webkit-transition: color .2s, background-color .2s;
+      transition: color .2s, background-color .2s; }
+    @media (min-width: 1141px) {
+      .header__nav-item > a:hover {
+        color: #fff;
+        background-color: #227650; } }
     .header__nav-item--active > a {
       font-weight: 700; }
     .header__nav-item > a {
@@ -2189,6 +2191,9 @@ main {
 .cheese-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #227650; }
 
+.cheese-pagination.swiper-pagination-lock {
+  display: none; }
+
 .cheese-pagination .swiper-pagination-bullet {
   background: #FFFFFF;
   opacity: 1;
@@ -2217,6 +2222,12 @@ main {
     height: calc(100vh - var(--header-height));
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw); }
+    @media (max-width: 1140.92px) {
+      .welcome-slider__wrapper .swiper {
+        height: 55vw; } }
+    @media (max-width: 575.98px) {
+      .welcome-slider__wrapper .swiper {
+        height: 85vw; } }
 
 .welcome-slider__pagination {
   display: -webkit-box;
@@ -3636,13 +3647,15 @@ a.contact-item {
     @media (max-width: 767.92px) {
       .detail-element__main-slider {
         height: 70vw; } }
-    .detail-element__main-slider .swiper-slide img {
-      width: 100%;
-      height: 100%;
-      -o-object-fit: contain;
-         object-fit: contain;
-      -o-object-position: center;
-         object-position: center; }
+    .detail-element__main-slider .swiper-slide {
+      cursor: pointer; }
+      .detail-element__main-slider .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: contain;
+           object-fit: contain;
+        -o-object-position: center;
+           object-position: center; }
   .detail-element__side-slider {
     position: relative;
     padding: 0 30px; }
@@ -3734,6 +3747,12 @@ a.contact-item {
             justify-content: space-between; }
     .props__item p {
       position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
       background-color: #227650;
       z-index: 1;
       width: calc(50% + 34px);
