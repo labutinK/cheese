@@ -3025,6 +3025,17 @@ main {
     margin-top: 40px; }
     .catalog__filter-btns .btn + .btn {
       margin-top: 10px; }
+  .catalog .slider-card__photo {
+    height: 360px; }
+    @media (max-width: 1600px) {
+      .catalog .slider-card__photo {
+        height: 20vw; } }
+    @media (max-width: 1140.92px) {
+      .catalog .slider-card__photo {
+        height: 30vw; } }
+    @media (max-width: 991.92px) {
+      .catalog .slider-card__photo {
+        height: 40vw; } }
 
 .filter-box input {
   display: none; }
@@ -3379,7 +3390,8 @@ main {
         margin-bottom: 0; }
     .news__main .news-slider-item__description {
       font-size: 24px;
-      line-height: 36px; }
+      line-height: 36px;
+      margin-top: 0; }
       @media (max-width: 1140.92px) {
         .news__main .news-slider-item__description {
           font-size: 22px;
@@ -3778,8 +3790,11 @@ a.contact-item {
         padding-right: 0;
         margin-bottom: 30px; } }
     .props__logo img {
-      max-width: 100%;
-      max-height: 100%; }
+      max-width: 285px;
+      height: auto; }
+      @media (max-width: 767.92px) {
+        .props__logo img {
+          max-width: 200px; } }
   .props__list {
     width: 50%;
     -ms-flex-negative: 0;
@@ -3835,6 +3850,20 @@ a.contact-item {
     @media (max-width: 575.98px) {
       .search-catalog__products {
         margin: 0 0 -30px; } }
+    .search-catalog__products .slider-card__photo {
+      height: 360px; }
+      @media (max-width: 1600px) {
+        .search-catalog__products .slider-card__photo {
+          height: 20vw; } }
+      @media (max-width: 991.92px) {
+        .search-catalog__products .slider-card__photo {
+          height: 30vw; } }
+      @media (max-width: 767.92px) {
+        .search-catalog__products .slider-card__photo {
+          height: 40vw; } }
+      @media (max-width: 575.98px) {
+        .search-catalog__products .slider-card__photo {
+          height: 75vw; } }
     .search-catalog__products .slider-card,
     .search-catalog__products .news-slider-item {
       margin: 0 15px 30px;
